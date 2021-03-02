@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def html():
-    return render_template("index.html", discord_url=Oauth.discord_login_url)
+    return render_template("index.html", discord_url="https://google.com")#Oauth.discord_login_url)
 
 @app.route("/login")
 def login():
