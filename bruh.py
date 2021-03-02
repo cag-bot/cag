@@ -1,6 +1,17 @@
-from flask import Flask
+from flask import Flask, render_template
+import sys
+sys.path
+sys.path.append(r"D:\oauth\oauth.py")
+from oauth import Oauth
+
 app = Flask(__name__)
 
-@app.route('/')
+@app.route("/")
 def html():
-    return "<h1>herro woruld</h1>"
+    return render_template("index.html", discord_url=Oauth.discord_login_url)
+
+@app.route("/login")
+def login():
+    return "poop"
+if __name__ == "__main__":
+    app.run()
